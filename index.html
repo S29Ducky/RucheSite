@@ -1,81 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Graphique lignes</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: white;
-    }
-    canvas {
-      max-width: 600px;
-      max-height: 400px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ruches Site</title>
 </head>
 <body>
-  <canvas id="lineChart"></canvas>
-
-  <script>
-    const ctx = document.getElementById('lineChart').getContext('2d');
-
-    const data = {
-      labels: Array.from({length: 50}, (_, i) => i + 1),
-      datasets: [
-        {
-          label: 'Courbe 1',
-          data: Array.from({length: 50}, () => Math.random() * 10 + 10),
-          borderColor: '#FFD166',
-          fill: false,
-          tension: 0.4,
-        },
-        {
-          label: 'Courbe 2',
-          data: Array.from({length: 50}, () => Math.random() * 10 + 5),
-          borderColor: '#06D6A0',
-          fill: false,
-          tension: 0.4,
-        },
-        {
-          label: 'Courbe 3',
-          data: Array.from({length: 50}, () => Math.random() * 10 + 15),
-          borderColor: '#118AB2',
-          fill: false,
-          tension: 0.4,
-        },
-        {
-          label: 'Courbe 4',
-          data: Array.from({length: 50}, () => Math.random() * 10 + 20),
-          borderColor: '#EF476F',
-          fill: false,
-          tension: 0.4,
-        }
-      ]
-    };
-
-    const config = {
-      type: 'line',
-      data: data,
-      options: {
-        plugins: {
-          legend: { display: false }
-        },
-        scales: {
-          x: { display: false },
-          y: { display: false }
-        },
-        elements: {
-          point: { radius: 0 }
-        }
-      }
-    };
-
-    new Chart(ctx, config);
-  </script>
+    
 </body>
+<script src="./main.js"></script>
 </html>
