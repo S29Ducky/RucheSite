@@ -1,5 +1,7 @@
 import Chart from "chart.js/auto";
 
+const temp = document.querySelector("#temp");
+
 function tab1() {
 
 const ctx = document.getElementById("myChart");
@@ -46,6 +48,33 @@ new Chart(ctx, config);
 tab1();
 
 
+
+async function temperature() {
+	const tempAppel = await fetch("http://10.69.0.140:3000/live/temperature", {
+		method: "GET",
+	})
+	const data = await tempAppel.json()
+	console.log(data)
+	temp.textContent = data.degree + "°C"
+}
+
+temperature()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function tab2() {
 
 const ctx = document.querySelector("#TabHistorique");
@@ -67,13 +96,13 @@ const data = {
 			label: "My First Dataset",
 			data: [65, 59, 80, 81, 56, 55, 40],
 			backgroundColor: [
-				"rgb(255, 159, 64)",
-				"rgb(255, 159, 64)",
-				"rgb(255, 159, 64)",
-				"rgb(255, 159, 64)",
-				"rgb(255, 159, 64)",
-				"rgb(255, 159, 64)",
-				"rgb(255, 159, 64)",
+				"rgb(240, 183, 59)",
+				"rgb(240, 183, 59)",
+				"rgb(240, 183, 59)",
+				"rgb(240, 183, 59)",
+				"rgb(240, 183, 59)",
+				"rgb(240, 183, 59)",
+				"rgb(240, 183, 59)",
 			],
 			borderWidth: 1,
       borderRadius: 10,

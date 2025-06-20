@@ -7,39 +7,129 @@
 		<title>Document</title>
 	</head>
 	<body
-		class="font-sans text-base text-[#212529] bg-[#f8f9fa] p-[0px] m-[0px] box-border"
+		class="font-sans text-base text-[#212529] bg-[url(/src/image.png)] bg-contain bg-repeat p-[0px] m-[0px] box-border"
 	>
 		<div class="pb-[20px] pt-[20px] mr-[50px] ml-[50px] flex flex-col">
 			<main>
-				<h1 class="text-5xl justify-self-center align-self-center">
+				<h1
+					class="text-[#ffffff] text-5xl justify-self-center align-self-center"
+				>
 					Dashboard Ruche
 				</h1>
+
+				<section
+					class="grid grid-cols-3 grid-rows-1 bg-[#ffffff] p-10 rounded-xl mb-[50px] mt-[50px]"
+				>
+					<div class="col-span-1">
+						<h2 class="text-3xl mb-[20px] font-bold">Compteur d'abeilles</h2>
+						<h3 class="text-3xl font-semibold mb-[5px]">180</h3>
+						<p class="text-xl">
+							Prédiction : <span class="font-semibold">190</span>
+						</p>
+					</div>
+					<div>
+						<h2 class="text-3xl mb-[20px] font-bold">Température</h2>
+						<h3
+							id="temp"
+							class="text-3xl text-center text-[#ffffff] font-semibold w-25 bg-[#212529] text-center rounded-lg"
+						>
+							0 °C
+						</h3>
+					</div>
+					<div>
+						<!-- <h2 class="text-3xl mb-[20px] font-bold">Etat de la ruche</h2> !-->
+					</div>
+				</section>
 				<section
 					class="bg-[#ffffff] p-10 rounded-xl mb-[50px] mt-[50px]"
 					id="tab"
 				>
-					<h2 class="text-4xl mb-[20px] font-medium">
+					<h2 class="text-3xl mb-[20px] font-bold">
 						Production de miel (kg/jour)
 					</h2>
 					<canvas id="myChart"></canvas>
 				</section>
-				<section
-					class="grid grid-cols-2 grid bg-[#ffffff] p-10 rounded-xl mb-[50px] mt-[50px]"
-				>
-					<div>
-						<h2>Compteur d'abeilles</h2>
-						<h3 class="">180</h3>
-						<p>Prédiction passages : 190</p>
-					</div>
-					<div>
-						<h2>Température</h2>
-						<h3>32 °C</h3>
-					</div>
-				</section>
 				<section class="bg-[#ffffff] p-10 rounded-xl mt-[50px]">
+					<h2 class="text-3xl mb-[20px] font-bold">
+						Historique de la production
+					</h2>
 					<canvas id="TabHistorique"></canvas>
-
-					<table></table>
+					<h2 class="text-3xl mb-[20px] font-semibold">
+						Nombre d'abeilles par jour
+					</h2>
+					<table
+						class="min-w-full border border-gray-300 shadow-md rounded-lg overflow-hidden"
+					>
+						<thead class="bg- text-gray-700">
+							<tr>
+								<th class="px-4 py-2 text-left border-b">Jour</th>
+								<th class="px-4 py-2 text-left border-b">Abeilles</th>
+								<th class="px-4 py-2 text-left border-b">Rendement</th>
+							</tr>
+						</thead>
+						<tbody class="bg-white divide-y divide-gray-200">
+							<tr class="hover:bg-yellow-50">
+								<th class="px-4 py-2 font-medium text-gray-700">Lundi</th>
+								<td class="px-4 py-2">10000</td>
+								<td class="px-4 py-2">15kg</td>
+							</tr>
+							<tr class="hover:bg-yellow-50">
+								<th class="px-4 py-2 font-medium text-gray-700">Mardi</th>
+								<td class="px-4 py-2">10000</td>
+								<td class="px-4 py-2">15kg</td>
+							</tr>
+							<tr class="hover:bg-yellow-50">
+								<th class="px-4 py-2 font-medium text-gray-700">Mercredi</th>
+								<td class="px-4 py-2">10000</td>
+								<td class="px-4 py-2">15kg</td>
+							</tr>
+							<tr class="hover:bg-yellow-50">
+								<th class="px-4 py-2 font-medium text-gray-700">Jeudi</th>
+								<td class="px-4 py-2">10000</td>
+								<td class="px-4 py-2">15kg</td>
+							</tr>
+							<tr class="hover:bg-yellow-50">
+								<th class="px-4 py-2 font-medium text-gray-700">Vendredi</th>
+								<td class="px-4 py-2">10000</td>
+								<td class="px-4 py-2">15kg</td>
+							</tr>
+							<tr class="hover:bg-yellow-50">
+								<th class="px-4 py-2 font-medium text-gray-700">Samedi</th>
+								<td class="px-4 py-2">10000</td>
+								<td class="px-4 py-2">15kg</td>
+							</tr>
+							<tr class="hover:bg-yellow-50">
+								<th class="px-4 py-2 font-medium text-gray-700">Dimanche</th>
+								<td class="px-4 py-2">10000</td>
+								<td class="px-4 py-2">15kg</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section
+					class="bg-white p-8 rounded-xl mt-12 shadow-md border border-gray-200"
+				>
+					<h2 class="text-4xl font-semibold mb-4">Résumé de la semaine</h2>
+					<div class="space-y-2 text-lg text-gray-700">
+						<p>
+							Moyenne miel :
+							<span id="meilMoyenne" class="font-medium text-yellow-700"
+								>7.0 Kg</span
+							>
+						</p>
+						<p>
+							Moyenne abeilles :
+							<span id="AbeillesMoyenne" class="font-medium text-yellow-700"
+								>150.0</span
+							>
+						</p>
+						<p>
+							Moyenne température :
+							<span id="TempMoyenne" class="font-medium text-yellow-700"
+								>20°C</span
+							>
+						</p>
+					</div>
 				</section>
 			</main>
 		</div>
