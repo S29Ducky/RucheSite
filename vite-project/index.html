@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./src/style.css" />
+		<title>Document</title>
+	</head>
+	<body
+		class="font-sans text-base text-[#212529] bg-[#f8f9fa] p-[0px] m-[0px] box-border"
+	>
+		<div class="pb-[20px] pt-[20px] mr-[50px] ml-[50px] flex flex-col">
+			<main>
+				<h1 class="text-5xl justify-self-center align-self-center">
+					Dashboard Ruche
+				</h1>
+				<section
+					class="bg-[#ffffff] p-10 rounded-xl mb-[50px] mt-[50px]"
+					id="tab"
+				>
+					<h2 class="text-4xl mb-[20px] font-medium">
+						Production de miel (kg/jour)
+					</h2>
+					<canvas id="myChart"></canvas>
+				</section>
+				<section
+					class="grid grid-cols-2 grid bg-[#ffffff] p-10 rounded-xl mb-[50px] mt-[50px]"
+				>
+					<div>
+						<h2>Compteur d'abeilles</h2>
+						<h3 class="">180</h3>
+						<p>Prédiction passages : 190</p>
+					</div>
+					<div>
+						<h2>Température</h2>
+						<h3>32 °C</h3>
+					</div>
+				</section>
+				<section class="bg-[#ffffff] p-10 rounded-xl mt-[50px]">
+					<canvas id="TabHistorique"></canvas>
+
+					<table></table>
+				</section>
+			</main>
+		</div>
+	</body>
+	<script src="./src/main.js" type="module"></script>
+</html>
