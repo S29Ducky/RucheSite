@@ -97,10 +97,11 @@ async function flowMoyenneBee() {
 	}
 
 	for (let i = 0; i < newArr.length; i++) {
-		somme += nombres[i];
+		somme += newArr[i];
 	}
-	let newSomme = 
-	// flowMoyenne.textContent = `Prédiction: ${data.count}`;
+	let result = somme / newArr.length;
+	console.log(result);
+	flowMoyenne.textContent = `Prédiction: ${result}`;
 }
 
 flowMoyenneBee();
